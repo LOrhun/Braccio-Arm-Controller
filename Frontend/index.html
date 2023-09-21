@@ -1,0 +1,192 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/style.css">
+    <title>Document</title>
+</head>
+<body style="margin: 0; height: 100%; overflow: hidden; background-color: aquamarine;">
+    <div class="row" style="height: 100vh">
+        <div class="collapse floating-div show" id="menu4">
+            <div style="height: 400px; padding: 10px;">
+                <text>Given Commands</text>
+                <p id="commandlist" class="code-look-alike" style="color: black;overflow-y: auto; height: 93%;"></p>
+            </div>
+        </div>
+        <div class="main-content" id="render-body">
+            
+        </div>
+        <di class="sidebar col">
+            <a data-bs-toggle="collapse" href="#menu1" style="padding-top: 10px; font-size: 30;">Braccio Robotic Arm Controller</a>
+            <div class="collapse sidebar-accordion " id="menu1" >
+                <div class="card card-body sidebar-accordion">
+                    <ul class="so-much-text">
+                        <li>
+                            <text style="font-weight: bolder;">Hardware Integration: </text>The control system for the Braccio robotic arm was meticulously crafted by a team of engineers and enthusiasts. It combines the precision of an Arduino microcontroller and the versatility of a Raspberry Pi.
+                        </li>
+                        <li>
+                            <text style="font-weight: bolder;">Arduino Control: </text>The core of this system lies in the Arduino board, which serves as the real-time controller for the Braccio arm. It handles the low-level motor control and sensors, ensuring precise and responsive movements.
+                        </li>
+                        <li>
+                            <text style="font-weight: bolder;">Raspberry Pi Integration: </text>A Raspberry Pi is seamlessly integrated into the setup, acting as the bridge between the Arduino and higher-level computing. The Raspberry Pi facilitates communication with external devices and enables the system to run more advanced software.
+                        </li>
+                        <li>
+                            <text style="font-weight: bolder;">Apache Kafka for Communication: </text> Apache Kafka, a distributed streaming platform, is employed as the communication backbone. Running on the Raspberry Pi, Kafka ensures reliable and real-time data transfer between the Arduino and the PC.
+                        </li>
+                        <li>
+                            <text style="font-weight: bolder;">PC Interface: </text> The entire system is designed to interface with a PC. Through Kafka, it delivers commands and receives feedback, allowing for remote control and monitoring of the Braccio arm's actions.
+                        </li>
+                    </ul>
+                    <text style="text-align: right; font-weight: bold;">This Website was created by <br>  Lütfü Orhun İNAN</text>
+                </div>
+            </div>
+            <a data-bs-toggle="collapse" href="#menu2" style="padding-top: 0px;">Motor Controls</a> 
+            <div class="collapse sidebar-accordion show" id="menu2" style="max-height: 100%; overflow-x: hidden;">
+                <div class="row so-much-text " style="max-height: fit-content; overflow-x: hidden; padding-top: 20px;">
+                    <div class="row">
+                        <div class="col-8" style="text-align: right; line-height: 10px;">
+                            <text> Control Step Modifier : </text>
+                        </div>
+                        <div class="number-input col">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();" class="stepbutton" style="box-shadow: none;"></button>
+                            <input id="stepmodifier" class="quantity code-look-alike" min="0" max="180" name="quantity" value="1" type="number" step="1" style="padding-top: 6px;">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();" class="plus stepbutton" style="box-shadow: none;"></button>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 15px;">
+                        <div class="col-8" style="text-align: right; line-height: 10px;">
+                            <text> Speed Modifier :</text>
+                        </div>
+                        <div class="number-input col">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" style="box-shadow: none;"></button>
+                            <input id="speedmodifier" class="quantity code-look-alike" min="1" max="3" name="quantity" value="1" type="number" step="1" style="padding-top: 6px;">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus" style="box-shadow: none;"></button>
+                        </div>
+                    </div>
+                    <ul style="max-height: fit-content; overflow-y: hidden;">
+                        <hr class="dotted">
+                        <label for="m1slider">Base Motor Controls</label>
+                        <li class="row sidebar-rows">
+                            <div class="number-input col-4">
+                                <button class="custom-button button1" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown();"></button>
+                                <input id="m1number" class="quantity code-look-alike" min="0" max="180" name="quantity" value="90" type="number" step="1"> 
+                                <button class="custom-button plus button1" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp();"></button>
+                            </div>
+                            <input class="form-range col" type="range" min="0" max="180" step="1" value="90" id="m1slider" id="customRange1">
+                        </li>
+                        <label for="m2slider">Shoulder Motor Controls</label>
+                        <li class="row sidebar-rows">
+                            <div class="number-input col-4">
+                                <button class="custom-button button2" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown();"></button>
+                                <input id="m2number" class="quantity code-look-alike" min="15" max="165" name="quantity" value="90" type="number" step="1"> 
+                                <button class="custom-button plus button2" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp();"></button>
+                            </div>
+                            <input class="form-range col" type="range" min="15" max="165" step="1" value="90" id="m2slider" id="customRange1">
+                        </li>
+                        <label for="m3slider">Elbow Motor Controls</label>
+                        <li class="row sidebar-rows">
+                            <div class="number-input col-4">
+                                <button class="custom-button button3" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown();"></button>
+                                <input id="m3number" class="quantity code-look-alike" min="0" max="180" name="quantity" value="90" type="number" step="1"> 
+                                <button class="custom-button plus button3" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp();"></button>
+                            </div>
+                            <input class="form-range col" type="range" min="0" max="180" step="1" value="90" id="m3slider" id="customRange1">
+                        </li>
+                        <label for="m4slider">Wrist Pitch Motor Controls</label>
+                        <li class="row sidebar-rows">
+                            <div class="number-input col-4">
+                                <button class="custom-button button4" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown();"></button>
+                                <input id="m4number" class="quantity code-look-alike" min="0" max="180" name="quantity" value="90" type="number" step="1"> 
+                                <button class="custom-button plus button4" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp();"></button>
+                            </div>
+                            <input class="form-range col" type="range" min="0" max="180" step="1" value="90" id="m4slider" id="customRange1">
+                        </li>
+                        <label for="m5slider">Wrist Roll Motor Controls</label>
+                        <li class="row sidebar-rows">
+                            <div class="number-input col-4">
+                                <button class="custom-button button5" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepDown();"></button>
+                                <input id="m5number" class="quantity code-look-alike" min="0" max="180" name="quantity" value="90" type="number" step="1"> 
+                                <button class="custom-button plus button5" style="box-shadow: none;" onclick="this.parentNode.querySelector('input[type=number]').stepUp();"></button>
+                            </div>
+                            <input class="form-range col" type="range" min="0" max="180" step="1" value="90" id="m5slider" id="customRange1">
+                        </li>
+                    </ul>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group" style="height: 30px;">
+                        <input type="radio" class="btn-check" name="btnradio" id="btn_grip_on" autocomplete="off" checked>
+                        <label class="btn btn-outline-primary" for="btn_grip_on" style="line-height: 15px;">Grip Open</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btn_grip_off" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btn_grip_off" style="line-height: 15px;">Grip Close</label>
+
+                        <input type="radio" class="btn-check" name="btnradio" id="btn_grip_onandoff" autocomplete="off">
+                        <label class="btn btn-outline-primary" for="btn_grip_onandoff" style="line-height: 15px;">Open Close</label>
+                    </div>
+                    <div style="height: 5px;"></div>
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <label id="btn_start" class="btn btn-success" for="btn_start">Start</label>
+                        <label id="btn_stop" class="btn btn-danger" for="btn_stop">Stop</label>
+                        <label id="btn_send" class="btn btn-primary" for="btn_send">Send</label>
+                    </div>
+                </div>
+            </div>
+            <a data-bs-toggle="collapse" href="#menu3">Pre Programmed Commands</a>
+            <div class="collapse sidebar-accordion show" id="menu3">
+                <div class="card card-body sidebar-accordion">
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <button id="btn_reset" type="button" class="btn btn-info">Reset</button>
+                        <button id="btn_base" type="button" class="btn btn-warning">Base80</button>
+                        <button id="btn_shldr" type="button" class="btn btn-warning">Shoulder80</button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <button id="btn_wrstv" type="button" class="btn btn-warning">wristv80</button>
+                        <button id="btn_wrstr" type="button" class="btn btn-warning">wristr80</button>
+                        <button id="btn_gripp" type="button" class="btn btn-warning">gripper80</button>
+                    </div>
+                </div>
+            </div>
+            <a data-bs-toggle="collapse" href="#menu4">Record Command</a>
+            <div class="collapse sidebar-accordion show" id="menu4">
+                <div class="card card-body sidebar-accordion">
+                    <div style="height: 5px;"></div>
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <input type="checkbox" class="btn-check" id="btn_sv_record" autocomplete="off">
+                        <label id="btn_sv_record" class="btn btn-outline-danger" for="btn_sv_record">Record Controls</label>
+                        <label id="btn_sv_next" class="btn btn-dark disabled" for="btn_sv_next">Next Step</label>
+                        <label id="btn_sv_download" class="btn btn-dark disabled" for="btn_sv_download">Download</label>
+                    </div>
+                    <div style="height: 5px;"></div>
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <label id="btn_sv_play" class="btn btn-dark disabled" for="btn_sv_play">Play Recorded</label>
+                        <label id="btn_sv_upload" class="btn btn-dark" for="btn_sv_upload" onclick="$('#myInput').click();">Upload Command List</label>
+                        <label id="btn_sv_send" class="btn btn-dark disabled" for="btn_sv_send">Send Recorded</label>
+                    </div>
+                    <input id="myInput" type="file" style="visibility:hidden" />
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="scripts/bootstrap-js/bootstrap.min.js"></script>
+<script type="module" src="scripts/website.js"></script>
+<script type="module" src="scripts/main.js"></script>
+</html>
+
+<!-- 
+<a data-bs-toggle="collapse" href="#menu1" aria-expanded="false">
+    Link with href
+</a> 
+-->
+
+<!--
+
+<div class="form-outline row">
+    <label class="form-label col-3" style="font-size: small;">Value:</label>
+    <code class="col" id="m1text" style="font-size: smaller;">10</code>
+    <input type="number" min="0" max="180" step="1" value="90" id= "m1input" class="form-control col" style="height: 20px;"/>
+</div>
+
+-->

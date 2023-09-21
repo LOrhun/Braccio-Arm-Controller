@@ -1,0 +1,96 @@
+{
+    "info": {
+        "_postman_id": "be614900-03c6-469d-b6c2-f46db3c14a5a",
+        "name": "test",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "ptext",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:8081/upload/ptext",
+                    "path": [
+                        "upload",
+                        "ptext"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8081"
+                },
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "ptext",
+                            "src": "C:\\Users\\Lutfu Orhun\\Downloads\\20220210_ZMMTXT_CC_temiz.XLSX",
+                            "type": "file"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "saptext",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "localhost:8081/upload/saptext",
+                    "path": [
+                        "upload",
+                        "saptext"
+                    ],
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8081"
+                },
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "saptext",
+                            "src": "C:\\Users\\Lutfu Orhun\\Desktop\\CDH Learing\\exceltodb\\files\\20220210_MAKT_CC_temiz.XLSX",
+                            "type": "file"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "http://localhost:8081/SendIt/",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8081/SendIt/",
+                    "path": [
+                        "SendIt"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8081"
+                },
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "message",
+                            "value": "Hello From Spring Boot",
+                            "type": "default"
+                        },
+                        {
+                            "key": "topic",
+                            "value": "test",
+                            "type": "default"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
