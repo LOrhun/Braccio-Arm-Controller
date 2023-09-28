@@ -110,6 +110,6 @@ Before getting started, ensure you have the following prerequisites in place:
 Feel free to open issues, submit pull requests, or suggest improvements.
 
 ## License
-This project is licensed under the Do What The F*ck You Want To Public License
+This project is licensed under the MIT License
 
 Thank you for your interest in the Braccio Robotic Arm Controller project. I hope this readme provides you with the necessary information to get started.
